@@ -3,13 +3,17 @@ import numpy as np
 class LoadDataset:
     def __init__(self, noise):
         #load train data
-        train_data = np.genfromtxt("./dataset_generator/generation/train_data_" + str(30) + "noise.csv", delimiter=',');
+        train_dataset_path = "./dataset_generator/generation/train_data_" + str(noise) + "noise.csv";
+        print("Loading.: ", train_dataset_path);
+        train_data = np.genfromtxt(train_dataset_path, delimiter=',');
         #assigning train data
         self.train_labels = train_data[:,8];
         self.train_phases = train_data = np.delete(train_data,8,1);
 
         #load test data
-        test_data = np.genfromtxt("./dataset_generator/generation/test_data_"+ str(30) + "noise.csv", delimiter=',');
+        test_dataset_path = "./dataset_generator/generation/test_data_"+ str(30) + "noise.csv";
+        print("Loading.: ", test_dataset_path);
+        test_data = np.genfromtxt(test_dataset_path, delimiter=',');
         #assigning test data
         self.test_labels = test_data[:,8];
         self.test_phases = test_data = np.delete(test_data,8,1);

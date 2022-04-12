@@ -1,4 +1,3 @@
-import tensorflow as tf
 import NeuralNetwork as nn
 import Data as dt
 
@@ -16,7 +15,7 @@ def main():
 	model.compile(optimizer='adam',
 					#tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 				#loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-				loss = tf.keras.losses.MeanSquaredError(),
+				loss = "mse",
 				metrics=['mean_squared_error', 'mean_absolute_error']); #rootmeansqaurederror
 	# training the model
 	model.fit(data.train_phases, data.train_labels, epochs=10);
@@ -27,13 +26,12 @@ def main():
 	print('\nMean Squared Error:', test_mse);
 	print('Mean Absolute Error:', test_mae);
 
-	""" probability_model = tf.keras.Sequential([model, 
-											tf.keras.layers.Softmax()])
-
+	"""
 	predictions = model.predict(test_phases)
 	print("predictions_shape: ", predictions.shape);
 	for i in range(0, predictions.shape[0]):
 	if random.random() >= 0.5:
-		print("label: ", test_labels[i], " - guess: ", predictions[i][0]); """
+		print("label: ", test_labels[i], " - guess: ", predictions[i][0]);
+	"""
 
 main();
