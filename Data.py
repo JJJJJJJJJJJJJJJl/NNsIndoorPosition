@@ -11,7 +11,7 @@ class LoadDataset:
         self.train_phases = train_data = np.delete(train_data,8,1);
 
         #load test data
-        test_dataset_path = "./dataset_generator/generation/test_data_"+ str(30) + "noise.csv";
+        test_dataset_path = "./dataset_generator/generation/test_data_"+ str(noise) + "noise.csv";
         print("Loading.: ", test_dataset_path);
         test_data = np.genfromtxt(test_dataset_path, delimiter=',');
         #assigning test data
