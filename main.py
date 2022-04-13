@@ -2,14 +2,15 @@ import NeuralNetwork as nn
 import Data as dt
 
 def main():
-	data = dt.LoadDataset(30);
+	data = dt.LoadDataset(10);
 	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
 	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
 	data.normalize_data();
 	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
 	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
 
-	model = nn.NeuralNetwork(128);
+	model = nn.Model1(128);
+	#model = nn.Model2(128, 512, 256);
 
 	# compiling the model
 	model.compile(optimizer='adam',
