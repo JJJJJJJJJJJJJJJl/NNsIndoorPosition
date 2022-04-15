@@ -1,6 +1,5 @@
 import NeuralNetwork as nn
 import Data as dt
-import random
 
 def load_data():
 	data = dt.Dataset(10);
