@@ -1,6 +1,6 @@
 import numpy as np
 
-class LoadDataset:
+class Dataset:
     def __init__(self, noise):
         #load train data
         train_dataset_path = "./dataset_generator/generation/train_data_" + str(noise) + "noise.csv";

@@ -22,7 +22,7 @@ def compile_model(model):
 	return model;
 
 def eval_model1():
-	data = dt.LoadDataset(30);
+	data = dt.Dataset(30);
 	data.normalize_data();
 	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
 	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
@@ -40,7 +40,7 @@ def eval_model1():
 	model_predictions(model, data);
 
 def eval_model2():
-	data = dt.LoadDataset(30);
+	data = dt.Dataset(30);
 	data.normalize_data();
 	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
 	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
