@@ -16,9 +16,8 @@ def model_predictions(model, data):
 	mean_abs_error = 0;
 	for i in range(0, predictions.shape[0]):
 		mean_abs_error = mean_abs_error + abs((data.test_labels[i]*360) - (predictions[i][0]*360));
-		#print("label: (", data.test_labels[i],",", data.test_labels[i]*360, ") - guess: (", predictions[i][0], ",", predictions[i][0]*360, ")");
 	mean_abs_error = mean_abs_error/36000;
-	print("mean_abs_error: ", mean_abs_error);
+	return mean_abs_error;
 
 def compile_model(model):
 	# compiling the model
@@ -29,34 +28,27 @@ def compile_model(model):
 				metrics=['mean_squared_error', 'mean_absolute_error']); #rootmeansqaurederror
 	return model;
 
-def eval_model1():
-	data = load_data();
-
+def eval_model1(data):
 	model = nn.Model1(128);
 	model = compile_model(model);
-	model.fit(data.train_phases, data.train_labels, epochs=15);
+	model.fit(data.train_phases, data.train_labels, epochs=1);
 	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
+	angle_mean_abs_error = model_predictions(model, data);
+	return test_mse, test_mae, angle_mean_abs_error;
 
-	print('\n(TEST) Mean Squared Error:', test_mse);
-	print('(TEST) Mean Absolute Error:', test_mae);
-
-	model_predictions(model, data);
-
-def eval_model2():
-	data = load_data();
-
+def eval_model2(data):
 	model = nn.Model2(128, 512, 256);
 	model = compile_model(model);
-	model.fit(data.train_phases, data.train_labels, epochs=15);
+	model.fit(data.train_phases, data.train_labels, epochs=1);
 	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
-
-	print('\n(TEST) Mean Squared Error:', test_mse);
-	print('(TEST) Mean Absolute Error:', test_mae);
-
-	model_predictions(model, data);
+	angle_mean_abs_error =  model_predictions(model, data);
+	return test_mse, test_mae, angle_mean_abs_error;
 
 def main():
-	eval_model1();
-	eval_model2();
+	data = load_data();
+	mse1, mae1, amse1 = eval_model1(data);
+	mse2, mae2, amse2 = eval_model2(data);
+	print("mse1: ", mse1, "mae1: ", mae1, "amse1: ", amse1);
+	print("mse2: ", mse2, "mae2: ", mae2, "amse2: ", amse2);
 
 main();
