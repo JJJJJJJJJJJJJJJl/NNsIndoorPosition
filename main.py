@@ -2,6 +2,15 @@ import NeuralNetwork as nn
 import Data as dt
 import random
 
+def load_data():
+	data = dt.Dataset(10);
+	data.normalize_data();
+	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
+	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
+	print('train_labels:', data.train_labels.shape, data.train_labels.min(), data.train_labels.max(), data.train_labels.dtype);
+	print('test_labels:', data.test_labels.shape, data.test_labels.min(), data.test_labels.max(), data.test_labels.dtype);
+	return data;
+
 # raw model predictions
 def model_predictions(model, data):
 	predictions = model.predict(data.test_phases)
@@ -22,12 +31,7 @@ def compile_model(model):
 	return model;
 
 def eval_model1():
-	data = dt.Dataset(30);
-	data.normalize_data();
-	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
-	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
-	print('train_labels:', data.train_labels.shape, data.train_labels.min(), data.train_labels.max(), data.train_labels.dtype);
-	print('test_labels:', data.test_labels.shape, data.test_labels.min(), data.test_labels.max(), data.test_labels.dtype);
+	data = load_data();
 
 	model = nn.Model1(128);
 	model = compile_model(model);
@@ -40,12 +44,7 @@ def eval_model1():
 	model_predictions(model, data);
 
 def eval_model2():
-	data = dt.Dataset(30);
-	data.normalize_data();
-	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
-	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
-	print('train_labels:', data.train_labels.shape, data.train_labels.min(), data.train_labels.max(), data.train_labels.dtype);
-	print('test_labels:', data.test_labels.shape, data.test_labels.min(), data.test_labels.max(), data.test_labels.dtype);
+	data = load_data();
 
 	model = nn.Model2(128, 512, 256);
 	model = compile_model(model);
