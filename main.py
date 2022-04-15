@@ -20,12 +20,9 @@ def model_predictions(model, data):
 	return mean_abs_error;
 
 def compile_model(model):
-	# compiling the model
 	model.compile(optimizer='adam',
-					#tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-				#loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
 				loss = "mse",
-				metrics=['mean_squared_error', 'mean_absolute_error']); #rootmeansqaurederror
+				metrics=['mean_squared_error', 'mean_absolute_error']);
 	return model;
 
 def eval_model1(data):
