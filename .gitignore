@@ -1,3 +1,5 @@
 __pycache__/
 test.py
 quests.txt
+test_data_*
+train_data_*

@@ -1,6 +1,6 @@
-for noise=10:10:50
+for noise=10:10:90
     n = 360;
-    k=100;
+    k=200;
     
     data = [];
     j=1;
@@ -19,4 +19,5 @@ for noise=10:10:50
     endfor
     file = ["test_data_" num2str(noise) "noise.csv"];
     csvwrite(file,data);
+    disp(file);
 endfor
