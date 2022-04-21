@@ -1,8 +1,8 @@
 import NeuralNetwork as nn
 import Data as dt
 
-def load_data():
-	data = dt.Dataset(10);
+def load_data(noise):
+	data = dt.Dataset(noise);
 	data.normalize_data();
 	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
 	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
@@ -16,7 +16,7 @@ def model_predictions(model, data):
 	mean_abs_error = 0;
 	for i in range(0, predictions.shape[0]):
 		mean_abs_error = mean_abs_error + abs((data.test_labels[i]*360) - (predictions[i][0]*360));
-	mean_abs_error = mean_abs_error/36000;
+	mean_abs_error = mean_abs_error/72000;
 	return mean_abs_error;
 
 def compile_model(model):
@@ -28,7 +28,7 @@ def compile_model(model):
 def eval_model1(data):
 	model = nn.Model1(128);
 	model = compile_model(model);
-	model.fit(data.train_phases, data.train_labels, epochs=1);
+	model.fit(data.train_phases, data.train_labels, epochs=15);
 	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
 	angle_mean_abs_error = model_predictions(model, data);
 	return test_mse, test_mae, angle_mean_abs_error;
@@ -36,13 +36,13 @@ def eval_model1(data):
 def eval_model2(data):
 	model = nn.Model2(128, 512, 256);
 	model = compile_model(model);
-	model.fit(data.train_phases, data.train_labels, epochs=1);
+	model.fit(data.train_phases, data.train_labels, epochs=15);
 	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
 	angle_mean_abs_error =  model_predictions(model, data);
 	return test_mse, test_mae, angle_mean_abs_error;
 
 def main():
-	data = load_data();
+	data = load_data(10);
 	mse1, mae1, amse1 = eval_model1(data);
 	mse2, mae2, amse2 = eval_model2(data);
 	print("mse1: ", mse1, "mae1: ", mae1, "amse1: ", amse1);
