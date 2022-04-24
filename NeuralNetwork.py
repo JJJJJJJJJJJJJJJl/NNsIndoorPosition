@@ -27,7 +27,7 @@ class Model2(tf.keras.Model):
         return self.mouth(layer);
 
 # raw model predictions
-def model_predictions(model, data):
+def angle_mean_absolute_error(model, data):
 	predictions = model.predict(data.test_phases)
 	mean_abs_error = 0;
 	for i in range(0, predictions.shape[0]):
@@ -46,5 +46,5 @@ def eval_model(model, data):
 	model = compile_model(model);
 	model.fit(data.train_phases, data.train_labels, epochs=15);
 	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
-	angle_mean_abs_error = model_predictions(model, data);
+	angle_mean_abs_error = angle_mean_absolute_error(model, data);
 	return test_mse, test_mae, angle_mean_abs_error;

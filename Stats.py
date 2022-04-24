@@ -5,6 +5,21 @@ import json
 MIN_NOISE = 10;
 MAX_NOISE = 90;
 
+def convert_metric(metric):
+	if metric == "mse":
+		return 0;
+	elif metric == "mae":
+		return 1;
+	elif metric == "amae":
+		return 2;
+	return -1;
+
+def get_noise_values():
+	noise_values = [];
+	for i in range(MIN_NOISE, MAX_NOISE+1, 10):
+		noise_values.append(i);
+	return noise_values;
+
 
 def store_stats(stats):
 	with open('statistics.txt', 'w') as f:
