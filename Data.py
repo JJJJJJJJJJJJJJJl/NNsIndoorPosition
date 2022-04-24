@@ -23,3 +23,12 @@ class Dataset:
         self.test_phases = (self.test_phases + 180) / 360;  #X_test
         self.train_labels = self.train_labels / 360;  #Y_train
         self.test_labels = self.test_labels / 360;   #Y_test
+
+def load_data(noise):
+	data = Dataset(noise);
+	data.normalize_data();
+	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
+	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
+	print('train_labels:', data.train_labels.shape, data.train_labels.min(), data.train_labels.max(), data.train_labels.dtype);
+	print('test_labels:', data.test_labels.shape, data.test_labels.min(), data.test_labels.max(), data.test_labels.dtype);
+	return data;

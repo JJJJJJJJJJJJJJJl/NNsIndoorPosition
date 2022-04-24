@@ -1,51 +1,23 @@
 import NeuralNetwork as nn
-import Data as dt
-
-def load_data(noise):
-	data = dt.Dataset(noise);
-	data.normalize_data();
-	print('train_phases:', data.train_phases.shape, data.train_phases.min(), data.train_phases.max(), data.train_phases.dtype);
-	print('test_phases:', data.test_phases.shape, data.test_phases.min(), data.test_phases.max(), data.test_phases.dtype);
-	print('train_labels:', data.train_labels.shape, data.train_labels.min(), data.train_labels.max(), data.train_labels.dtype);
-	print('test_labels:', data.test_labels.shape, data.test_labels.min(), data.test_labels.max(), data.test_labels.dtype);
-	return data;
-
-# raw model predictions
-def model_predictions(model, data):
-	predictions = model.predict(data.test_phases)
-	mean_abs_error = 0;
-	for i in range(0, predictions.shape[0]):
-		mean_abs_error = mean_abs_error + abs((data.test_labels[i]*360) - (predictions[i][0]*360));
-	mean_abs_error = mean_abs_error/72000;
-	return mean_abs_error;
-
-def compile_model(model):
-	model.compile(optimizer='adam',
-				loss = "mse",
-				metrics=['mean_squared_error', 'mean_absolute_error']);
-	return model;
-
-def eval_model1(data):
-	model = nn.Model1(128);
-	model = compile_model(model);
-	model.fit(data.train_phases, data.train_labels, epochs=15);
-	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
-	angle_mean_abs_error = model_predictions(model, data);
-	return test_mse, test_mae, angle_mean_abs_error;
-
-def eval_model2(data):
-	model = nn.Model2(128, 512, 256);
-	model = compile_model(model);
-	model.fit(data.train_phases, data.train_labels, epochs=15);
-	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
-	angle_mean_abs_error =  model_predictions(model, data);
-	return test_mse, test_mae, angle_mean_abs_error;
+import Stats as st
 
 def main():
-	data = load_data(10);
-	mse1, mae1, amse1 = eval_model1(data);
-	mse2, mae2, amse2 = eval_model2(data);
+	stats = st.get_stats();
+	for i in range (st.MIN_NOISE, st.MAX_NOISE+1, 10):
+		i = (int)((i-1)/10);
+		noise = (i+1)*10;
+		print("Noise", noise);
+		noise_stats = stats[i]["noise"+str(noise)];
+		print(noise_stats["model1"][0], noise_stats["model1"][1], noise_stats["model1"][2]);
+		print(noise_stats["model2"][0], noise_stats["model2"][1], noise_stats["model2"][2]);
+	st.store_stats(stats);
+
+	loaded_stats = st.load_stats();
+	print(loaded_stats);
+	""" data = dt.load_data(30);
+	mse1, mae1, amse1 = nn.eval_model(nn.Model1(128), data);
+	mse2, mae2, amse2 = nn.eval_model(nn.Model2(128, 512, 256), data);
 	print("mse1: ", mse1, "mae1: ", mae1, "amse1: ", amse1);
-	print("mse2: ", mse2, "mae2: ", mae2, "amse2: ", amse2);
+	print("mse2: ", mse2, "mae2: ", mae2, "amse2: ", amse2); """
 
 main();
