@@ -12,6 +12,10 @@ class Model1(tf.keras.Model):
         forward = self.hidden(input);
         return self.mouth(forward);
 
+    def build_graph(self):
+        x = tf.keras.layers.Input(shape=((8,)));
+        return tf.keras.Model(inputs=[x], outputs=self.call(x));
+
 class Model2(tf.keras.Model):
     def __init__(self, hidden_nodes1, hidden_nodes2, hidden_nodes3):
         super().__init__();
@@ -25,6 +29,20 @@ class Model2(tf.keras.Model):
         layer = self.dense2(layer);
         layer = self.dense3(layer);
         return self.mouth(layer);
+    
+    def build_graph(self):
+        x = tf.keras.layers.Input(shape=((8,)));
+        return tf.keras.Model(inputs=[x], outputs=self.call(x));
+
+def plot_model(model, file):
+    tf.keras.utils.plot_model(
+        model.build_graph(),
+        to_file=file,
+        show_shapes=True,
+        show_layer_names=True,
+        dpi=96,
+        show_layer_activations=True
+    )
 
 # raw model predictions
 def angle_mean_absolute_error(model, data):
