@@ -37,6 +37,7 @@ def get_stats():
 	for i in range(MIN_NOISE, MAX_NOISE+1, 10):
 		model1 = nn.Model1(128);
 		model2 = nn.Model2(128, 512, 256);
+		model3 = nn.Model3(128, 512, 256);
 		data = dt.load_data(i);
 		mse1, mae1, amse1 = nn.eval_model(model1, data);
 		mse2, mae2, amse2 = nn.eval_model(model2, data);
