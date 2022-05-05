@@ -13,14 +13,17 @@ def main():
 	vs.show_graph("Mean Squared Error", 
 		vs.get_metric_values(st.convert_metric("mse"),loaded_stats, "model1"),
 		vs.get_metric_values(st.convert_metric("mse"),loaded_stats, "model2"),
+		vs.get_metric_values(st.convert_metric("mse"),loaded_stats, "model3"),
 		st.get_noise_values());
 	vs.show_graph("Mean Absolute Error", 
 		vs.get_metric_values(st.convert_metric("mae"),loaded_stats, "model1"),
 		vs.get_metric_values(st.convert_metric("mae"),loaded_stats, "model2"),
+		vs.get_metric_values(st.convert_metric("mae"),loaded_stats, "model3"),
 		st.get_noise_values());
 	vs.show_graph("Angle Mean Absolute Error", 
 		vs.get_metric_values(st.convert_metric("amae"),loaded_stats, "model1"),
 		vs.get_metric_values(st.convert_metric("amae"),loaded_stats, "model2"),
+		vs.get_metric_values(st.convert_metric("amae"),loaded_stats, "model3"),
 		st.get_noise_values()); """
 
 	# ploting models
@@ -32,6 +35,11 @@ def main():
 	model2 = nn.Model2(128, 512, 256);
 	model2 = nn.compile_model(model2);
 	model2.fit(data.train_phases, data.train_labels, epochs=1);
-	nn.plot_model(model2, "model2.png"); """
+	nn.plot_model(model2, "model2.png");
+	data = dt.load_data(10);
+	model3 = nn.Model3(128, 512, 256);
+	model3 = nn.compile_model(model3);
+	model3.fit(data.train_phases, data.train_labels, epochs=1);
+	nn.plot_model(model3, "model3.png"); """
 
 main();

@@ -40,5 +40,6 @@ def get_stats():
 		data = dt.load_data(i);
 		mse1, mae1, amse1 = nn.eval_model(model1, data);
 		mse2, mae2, amse2 = nn.eval_model(model2, data);
-		computed_stats.append({"noise"+str(i):{"model1": [mse1, mae1, amse1], "model2": [mse2, mae2, amse2]}});
+		mse3, mae3, amse3 = nn.eval_model(model3, data);
+		computed_stats.append({"noise"+str(i):{"model1": [mse1, mae1, amse1], "model2": [mse2, mae2, amse2], "model3": [mse3, mae3, amse3]}});
 	return computed_stats;

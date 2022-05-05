@@ -23,10 +23,11 @@ model1_stats: array containing model1 stat values
 model2_stats: array containing model2 stat values
 noise_values: array containing all noise values [10..90]
 """
-def show_graph(metric, model1_stats, model2_stats, noise_values):
+def show_graph(metric, model1_stats, model2_stats, model3_stats, noise_values):
     plt.plot(noise_values, model1_stats, label="Model1");
     plt.plot(noise_values, model2_stats, label="Model2");
+    plt.plot(noise_values, model2_stats, label="Model3");
     plt.xlabel("Noise");
     plt.ylabel(metric);
-    #plt.legend();
+    plt.legend();
     plt.show();

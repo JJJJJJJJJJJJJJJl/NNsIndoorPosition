@@ -1,3 +1,5 @@
+.DS_Store
+stat_graphs/.DS_Store
 __pycache__/
 test.py
 quests.txt
