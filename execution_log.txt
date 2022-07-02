@@ -1,0 +1,263 @@
+Loading.:  ./dataset_generator/generation/train_data_10noise.csv
+Loading.:  ./dataset_generator/generation/test_data_10noise.csv
+Loading.:  ./dataset_generator/generation/train_data_20noise.csv
+Loading.:  ./dataset_generator/generation/test_data_20noise.csv
+Loading.:  ./dataset_generator/generation/train_data_30noise.csv
+Loading.:  ./dataset_generator/generation/test_data_30noise.csv
+Loading.:  ./dataset_generator/generation/train_data_40noise.csv
+Loading.:  ./dataset_generator/generation/test_data_40noise.csv
+Loading.:  ./dataset_generator/generation/train_data_50noise.csv
+Loading.:  ./dataset_generator/generation/test_data_50noise.csv
+Loading.:  ./dataset_generator/generation/train_data_60noise.csv
+Loading.:  ./dataset_generator/generation/test_data_60noise.csv
+Loading.:  ./dataset_generator/generation/train_data_70noise.csv
+Loading.:  ./dataset_generator/generation/test_data_70noise.csv
+Loading.:  ./dataset_generator/generation/train_data_80noise.csv
+Loading.:  ./dataset_generator/generation/test_data_80noise.csv
+Loading.:  ./dataset_generator/generation/train_data_90noise.csv
+Loading.:  ./dataset_generator/generation/test_data_90noise.csv
+train_phases: (648000, 8) 4.712077782976899e-07 0.9999996474889659 float64
+test_phases: (648000, 8) 1.8919642457938658e-06 0.9999997597591412 float64
+train_labels: (648000,) 0.002777777777777778 1.0 float64
+test_labels: (648000,) 0.002777777777777778 1.0 float64
+Metal device set to: Apple M1
+
+systemMemory: 16.00 GB
+maxCacheSize: 5.33 GB
+
+2022-06-29 13:57:35.346797: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2022-06-29 13:57:35.346888: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+Evaluating model <NeuralNetwork.Model1 object at 0x1055ec730>
+2022-06-29 13:57:35.442406: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+Epoch 1/20
+2022-06-29 13:57:35.597126: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0213 - mean_squared_error: 0.0213 - mean_absolute_error: 0.0820
+Epoch 2/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0183 - mean_squared_error: 0.0183 - mean_absolute_error: 0.0730
+Epoch 3/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0176 - mean_squared_error: 0.0176 - mean_absolute_error: 0.0711
+Epoch 4/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0172 - mean_squared_error: 0.0172 - mean_absolute_error: 0.0700
+Epoch 5/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0170 - mean_squared_error: 0.0170 - mean_absolute_error: 0.0693
+Epoch 6/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0168 - mean_squared_error: 0.0168 - mean_absolute_error: 0.0687
+Epoch 7/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0167 - mean_squared_error: 0.0167 - mean_absolute_error: 0.0683
+Epoch 8/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0166 - mean_squared_error: 0.0166 - mean_absolute_error: 0.0680
+Epoch 9/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0165 - mean_squared_error: 0.0165 - mean_absolute_error: 0.0678
+Epoch 10/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0164 - mean_squared_error: 0.0164 - mean_absolute_error: 0.0676
+Epoch 11/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0163 - mean_squared_error: 0.0163 - mean_absolute_error: 0.0673
+Epoch 12/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0163 - mean_squared_error: 0.0163 - mean_absolute_error: 0.0672
+Epoch 13/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0162 - mean_squared_error: 0.0162 - mean_absolute_error: 0.0669
+Epoch 14/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0161 - mean_squared_error: 0.0161 - mean_absolute_error: 0.0667
+Epoch 15/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0161 - mean_squared_error: 0.0161 - mean_absolute_error: 0.0666
+Epoch 16/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0160 - mean_squared_error: 0.0160 - mean_absolute_error: 0.0664
+Epoch 17/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0160 - mean_squared_error: 0.0160 - mean_absolute_error: 0.0661
+Epoch 18/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0159 - mean_squared_error: 0.0159 - mean_absolute_error: 0.0661
+Epoch 19/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0159 - mean_squared_error: 0.0159 - mean_absolute_error: 0.0661
+Epoch 20/20
+20250/20250 [==============================] - 64s 3ms/step - loss: 0.0159 - mean_squared_error: 0.0159 - mean_absolute_error: 0.0658
+<NeuralNetwork.Model1 object at 0x1055ec730>  training time:  1277.09993
+Evaluating model <NeuralNetwork.Model2 object at 0x12ee93190>
+Epoch 1/20
+2022-06-29 14:18:52.644999: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0186 - mean_squared_error: 0.0186 - mean_absolute_error: 0.0671
+Epoch 2/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0155 - mean_squared_error: 0.0155 - mean_absolute_error: 0.0556
+Epoch 3/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0146 - mean_squared_error: 0.0146 - mean_absolute_error: 0.0526
+Epoch 4/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0141 - mean_squared_error: 0.0141 - mean_absolute_error: 0.0508     
+Epoch 5/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0137 - mean_squared_error: 0.0137 - mean_absolute_error: 0.0496
+Epoch 6/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0135 - mean_squared_error: 0.0135 - mean_absolute_error: 0.0489
+Epoch 7/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0132 - mean_squared_error: 0.0132 - mean_absolute_error: 0.0482
+Epoch 8/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0131 - mean_squared_error: 0.0131 - mean_absolute_error: 0.0478
+Epoch 9/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0129 - mean_squared_error: 0.0129 - mean_absolute_error: 0.0474
+Epoch 10/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0128 - mean_squared_error: 0.0128 - mean_absolute_error: 0.0469
+Epoch 11/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0127 - mean_squared_error: 0.0127 - mean_absolute_error: 0.0466
+Epoch 12/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0126 - mean_squared_error: 0.0126 - mean_absolute_error: 0.0463
+Epoch 13/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0125 - mean_squared_error: 0.0125 - mean_absolute_error: 0.0461
+Epoch 14/20
+20250/20250 [==============================] - 84s 4ms/step - loss: 0.0124 - mean_squared_error: 0.0124 - mean_absolute_error: 0.0458
+Epoch 15/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0123 - mean_squared_error: 0.0123 - mean_absolute_error: 0.0456
+Epoch 16/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0123 - mean_squared_error: 0.0123 - mean_absolute_error: 0.0456
+Epoch 17/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0122 - mean_squared_error: 0.0122 - mean_absolute_error: 0.0454
+Epoch 18/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0122 - mean_squared_error: 0.0122 - mean_absolute_error: 0.0453
+Epoch 19/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0121 - mean_squared_error: 0.0121 - mean_absolute_error: 0.0451
+Epoch 20/20
+20250/20250 [==============================] - 83s 4ms/step - loss: 0.0121 - mean_squared_error: 0.0121 - mean_absolute_error: 0.0450
+<NeuralNetwork.Model2 object at 0x12ee93190>  training time:  1667.855189
+Evaluating model <NeuralNetwork.Model3 object at 0x12ee93e20>
+Epoch 1/20
+2022-06-29 14:46:40.592919: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0174 - mean_squared_error: 0.0174 - mean_absolute_error: 0.0636
+Epoch 2/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0147 - mean_squared_error: 0.0147 - mean_absolute_error: 0.0528
+Epoch 3/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0139 - mean_squared_error: 0.0139 - mean_absolute_error: 0.0497
+Epoch 4/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0135 - mean_squared_error: 0.0135 - mean_absolute_error: 0.0483
+Epoch 5/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0131 - mean_squared_error: 0.0131 - mean_absolute_error: 0.0471
+Epoch 6/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0129 - mean_squared_error: 0.0129 - mean_absolute_error: 0.0464
+Epoch 7/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0127 - mean_squared_error: 0.0127 - mean_absolute_error: 0.0457
+Epoch 8/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0125 - mean_squared_error: 0.0125 - mean_absolute_error: 0.0452
+Epoch 9/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0124 - mean_squared_error: 0.0124 - mean_absolute_error: 0.0449
+Epoch 10/20
+20250/20250 [==============================] - 118s 6ms/step - loss: 0.0123 - mean_squared_error: 0.0123 - mean_absolute_error: 0.0444
+Epoch 11/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0122 - mean_squared_error: 0.0122 - mean_absolute_error: 0.0443
+Epoch 12/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0121 - mean_squared_error: 0.0121 - mean_absolute_error: 0.0440
+Epoch 13/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0120 - mean_squared_error: 0.0120 - mean_absolute_error: 0.0438
+Epoch 14/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0120 - mean_squared_error: 0.0120 - mean_absolute_error: 0.0436
+Epoch 15/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0119 - mean_squared_error: 0.0119 - mean_absolute_error: 0.0436
+Epoch 16/20
+20250/20250 [==============================] - 120s 6ms/step - loss: 0.0118 - mean_squared_error: 0.0118 - mean_absolute_error: 0.0433
+Epoch 17/20
+20250/20250 [==============================] - 120s 6ms/step - loss: 0.0118 - mean_squared_error: 0.0118 - mean_absolute_error: 0.0432
+Epoch 18/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0117 - mean_squared_error: 0.0117 - mean_absolute_error: 0.0430
+Epoch 19/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0117 - mean_squared_error: 0.0117 - mean_absolute_error: 0.0430
+Epoch 20/20
+20250/20250 [==============================] - 119s 6ms/step - loss: 0.0116 - mean_squared_error: 0.0116 - mean_absolute_error: 0.0429
+<NeuralNetwork.Model3 object at 0x12ee93e20>  training time:  2374.962516
+2022-06-29 15:26:15.416690: W tensorflow/python/util/util.cc:368] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+Saved:  <NeuralNetwork.Model1 object at 0x1055ec730>
+Saved:  <NeuralNetwork.Model2 object at 0x12ee93190>
+Saved:  <NeuralNetwork.Model3 object at 0x12ee93e20>
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  10  noise..
+2022-06-29 15:26:16.670139: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+2250/2250 - 4s - loss: 0.0026 - mean_squared_error: 0.0026 - mean_absolute_error: 0.0238 - 4s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  4.296788  over 72000 datapoints
+2022-06-29 15:26:20.949388: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  20  noise..
+2022-06-29 15:26:23.992657: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+2250/2250 - 5s - loss: 0.0031 - mean_squared_error: 0.0031 - mean_absolute_error: 0.0250 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.073239  over 72000 datapoints
+2022-06-29 15:26:29.042322: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  30  noise..
+2250/2250 - 5s - loss: 0.0039 - mean_squared_error: 0.0039 - mean_absolute_error: 0.0273 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.079932  over 72000 datapoints
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  40  noise..
+2250/2250 - 5s - loss: 0.0056 - mean_squared_error: 0.0056 - mean_absolute_error: 0.0337 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.006925  over 72000 datapoints
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  50  noise..
+2250/2250 - 5s - loss: 0.0089 - mean_squared_error: 0.0089 - mean_absolute_error: 0.0458 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.012771  over 72000 datapoints
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  60  noise..
+2250/2250 - 5s - loss: 0.0141 - mean_squared_error: 0.0141 - mean_absolute_error: 0.0632 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.011341  over 72000 datapoints
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  70  noise..
+2250/2250 - 5s - loss: 0.0219 - mean_squared_error: 0.0219 - mean_absolute_error: 0.0874 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.013724  over 72000 datapoints
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  80  noise..
+2250/2250 - 5s - loss: 0.0338 - mean_squared_error: 0.0338 - mean_absolute_error: 0.1191 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.022301  over 72000 datapoints
+Testing  <NeuralNetwork.Model1 object at 0x1055ec730>  on  90  noise..
+2250/2250 - 5s - loss: 0.0480 - mean_squared_error: 0.0480 - mean_absolute_error: 0.1535 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model1 object at 0x1055ec730>  testing time:  5.012441  over 72000 datapoints
+<NeuralNetwork.Model1 object at 0x1055ec730>  total testing time:  44.529462
+<NeuralNetwork.Model1 object at 0x1055ec730>  average testing time:  4.947718
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  10  noise..
+2022-06-29 15:27:28.187062: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+2250/2250 - 5s - loss: 0.0014 - mean_squared_error: 0.0014 - mean_absolute_error: 0.0101 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.099904  over 72000 datapoints
+2022-06-29 15:27:33.269605: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  20  noise..
+2022-06-29 15:27:38.270979: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+2250/2250 - 6s - loss: 0.0020 - mean_squared_error: 0.0020 - mean_absolute_error: 0.0113 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.885923  over 72000 datapoints
+2022-06-29 15:27:44.134745: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  30  noise..
+2250/2250 - 6s - loss: 0.0028 - mean_squared_error: 0.0028 - mean_absolute_error: 0.0134 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.81127  over 72000 datapoints
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  40  noise..
+2250/2250 - 6s - loss: 0.0041 - mean_squared_error: 0.0041 - mean_absolute_error: 0.0181 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.789531  over 72000 datapoints
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  50  noise..
+2250/2250 - 6s - loss: 0.0062 - mean_squared_error: 0.0062 - mean_absolute_error: 0.0273 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.812358  over 72000 datapoints
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  60  noise..
+2250/2250 - 6s - loss: 0.0101 - mean_squared_error: 0.0101 - mean_absolute_error: 0.0417 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.751505  over 72000 datapoints
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  70  noise..
+2250/2250 - 6s - loss: 0.0167 - mean_squared_error: 0.0167 - mean_absolute_error: 0.0639 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.7566  over 72000 datapoints
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  80  noise..
+2250/2250 - 6s - loss: 0.0281 - mean_squared_error: 0.0281 - mean_absolute_error: 0.0956 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.766937  over 72000 datapoints
+Testing  <NeuralNetwork.Model2 object at 0x12ee93190>  on  90  noise..
+2250/2250 - 6s - loss: 0.0430 - mean_squared_error: 0.0430 - mean_absolute_error: 0.1334 - 6s/epoch - 3ms/step
+<NeuralNetwork.Model2 object at 0x12ee93190>  testing time:  5.851562  over 72000 datapoints
+<NeuralNetwork.Model2 object at 0x12ee93190>  total testing time:  51.52559
+<NeuralNetwork.Model2 object at 0x12ee93190>  average testing time:  5.725065555555556
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  10  noise..
+2022-06-29 15:29:05.892323: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+2250/2250 - 5s - loss: 0.0035 - mean_squared_error: 0.0035 - mean_absolute_error: 0.0142 - 5s/epoch - 2ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  4.693526  over 72000 datapoints
+2022-06-29 15:29:10.565367: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  20  noise..
+2022-06-29 15:29:16.133873: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+2250/2250 - 7s - loss: 0.0037 - mean_squared_error: 0.0037 - mean_absolute_error: 0.0148 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.821983  over 72000 datapoints
+2022-06-29 15:29:22.933669: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  30  noise..
+2250/2250 - 7s - loss: 0.0044 - mean_squared_error: 0.0044 - mean_absolute_error: 0.0161 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.776061  over 72000 datapoints
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  40  noise..
+2250/2250 - 7s - loss: 0.0053 - mean_squared_error: 0.0053 - mean_absolute_error: 0.0193 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.735604  over 72000 datapoints
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  50  noise..
+2250/2250 - 7s - loss: 0.0069 - mean_squared_error: 0.0069 - mean_absolute_error: 0.0258 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.744323  over 72000 datapoints
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  60  noise..
+2250/2250 - 7s - loss: 0.0102 - mean_squared_error: 0.0102 - mean_absolute_error: 0.0376 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.750551  over 72000 datapoints
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  70  noise..
+2250/2250 - 7s - loss: 0.0166 - mean_squared_error: 0.0166 - mean_absolute_error: 0.0582 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.730206  over 72000 datapoints
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  80  noise..
+2250/2250 - 7s - loss: 0.0277 - mean_squared_error: 0.0277 - mean_absolute_error: 0.0891 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.738109  over 72000 datapoints
+Testing  <NeuralNetwork.Model3 object at 0x12ee93e20>  on  90  noise..
+2250/2250 - 7s - loss: 0.0429 - mean_squared_error: 0.0429 - mean_absolute_error: 0.1276 - 7s/epoch - 3ms/step
+<NeuralNetwork.Model3 object at 0x12ee93e20>  testing time:  6.731273  over 72000 datapoints
+<NeuralNetwork.Model3 object at 0x12ee93e20>  total testing time:  58.72163600000001
+<NeuralNetwork.Model3 object at 0x12ee93e20>  average testing time:  6.524626222222223
+{'stats': [{1: [{'noise10': [0.0026353788562119007, 8.560200172103114, 0.023778364062309265]}, {'noise20': [0.003131016157567501, 9.00265442412595, 0.0250077061355114]}, {'noise30': [0.0038875865284353495, 9.828209074935979, 0.02730095013976097]}, {'noise40': [0.005586626939475536, 12.119055412755245, 0.03366449475288391]}, {'noise50': [0.008900423534214497, 16.470009564275543, 0.04575061425566673]}, {'noise60': [0.014143984764814377, 22.755595142727923, 0.06321088969707489]}, {'noise70': [0.02185320109128952, 31.4612357260411, 0.08739348500967026]}, {'noise80': [0.03375687077641487, 42.85798626675043, 0.1190517321228981]}, {'noise90': [0.04796232283115387, 55.2771445275512, 0.15354971587657928]}]}, {2: [{'noise10': [0.0013860255712643266, 3.632345087150733, 0.010089844465255737]}, {'noise20': [0.002040594583377242, 4.0692295337882305, 0.011303567327558994]}, {'noise30': [0.0028370546642690897, 4.824404398245944, 0.013401303440332413]}, {'noise40': [0.004069760907441378, 6.5167364915510015, 0.018102284520864487]}, {'noise50': [0.0062134768813848495, 9.815839433550835, 0.027266567572951317]}, {'noise60': [0.010131889022886753, 15.013227876671486, 0.041704025119543076]}, {'noise70': [0.016737135127186775, 22.996485568030014, 0.06388000398874283]}, {'noise80': [0.028113707900047302, 34.41642823868162, 0.09560245275497437]}, {'noise90': [0.04303288087248802, 48.03903945229782, 0.1334436982870102]}]}, {3: [{'noise10': [0.003530340502038598, 5.108521282489101, 0.014190343208611012]}, {'noise20': [0.0037137148901820183, 5.31792114817765, 0.014772191643714905]}, {'noise30': [0.004358593840152025, 5.789088171862893, 0.016081025823950768]}, {'noise40': [0.005278419703245163, 6.960029901873734, 0.019333669915795326]}, {'noise50': [0.006863863673061132, 9.272366255114475, 0.025756919756531715]}, {'noise60': [0.010174517519772053, 13.519811639438073, 0.03755554184317589]}, {'noise70': [0.016639724373817444, 20.95833712243206, 0.05821840465068817]}, {'noise80': [0.027677472680807114, 32.07292872598767, 0.08909259736537933]}, {'noise90': [0.04285714030265808, 45.95239296010136, 0.12764720618724823]}]}]}

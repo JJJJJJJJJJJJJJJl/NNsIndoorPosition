@@ -1,4 +1,5 @@
 import tensorflow as tf
+import datetime
 
 class Model1(tf.keras.Model):
     #create layers
@@ -77,11 +78,11 @@ def plot_model(model, file):
     )
 
 # raw model predictions
-def angle_mean_absolute_error(model, data):
-	predictions = model.predict(data.test_phases)
+def angle_mean_absolute_error(model, phases, labels):
+	predictions = model.predict(phases)
 	mean_abs_error = 0;
 	for i in range(0, predictions.shape[0]):
-		mean_abs_error = mean_abs_error + abs((data.test_labels[i]*360) - (predictions[i][0]*360));
+		mean_abs_error = mean_abs_error + abs((labels[i]*360) - (predictions[i][0]*360));
 	mean_abs_error = mean_abs_error/72000;
 	return mean_abs_error;
 
@@ -91,10 +92,35 @@ def compile_model(model):
 				metrics=['mean_squared_error', 'mean_absolute_error']);
 	return model;
 
-def eval_model(model, data):
-	print("Evaluating model", model);
-	model = compile_model(model);
-	model.fit(data.train_phases, data.train_labels, epochs=15);
-	test_loss, test_mse, test_mae = model.evaluate(data.test_phases,  data.test_labels, verbose=2);
-	angle_mean_abs_error = angle_mean_absolute_error(model, data);
-	return test_mse, test_mae, angle_mean_abs_error;
+def train_model(model, data):
+    bef = datetime.datetime.now();
+    print("Evaluating model", model);
+    model = compile_model(model);
+    model.fit(data.train_phases, data.train_labels, epochs=20);
+    after = datetime.datetime.now();
+    print(model," training time: ", (after-bef).total_seconds());
+
+def test_model(model_num, model, data):
+    model_computed_stats = []
+    last_noise_value = 0;
+    total_testing_time = 0;
+    for noise in range(1,9+1):
+        print("Testing ", model, " on ", noise*10, " noise..");
+        bef = datetime.datetime.now();
+        test_loss, test_mse, test_mae = model.evaluate(data.test_phases[last_noise_value:72000*noise,:8],  data.test_labels[last_noise_value:72000*noise], verbose=2);
+        after = datetime.datetime.now();
+        print(model," testing time: ", (after-bef).total_seconds(), " over 72000 datapoints");
+        total_testing_time += (after-bef).total_seconds();
+        angle_mean_abs_error = angle_mean_absolute_error(model, data.test_phases[last_noise_value:72000*noise,:8],  data.test_labels[last_noise_value:72000*noise]);
+        last_noise_value = (72000*noise)+1;
+        model_computed_stats.append({"noise"+str(noise*10):[test_mse, angle_mean_abs_error, test_mae]});
+    print(model, " total testing time: ", total_testing_time);
+    print(model, " average testing time: ", total_testing_time/9);
+    return {model_num:model_computed_stats}
+
+def save_models(model_num, model):
+	model.save('models/model'+str(model_num));
+	print("Saved: ",model);
+
+def load_model(model_num):
+    return tf.keras.models.load_model('models/model'+str(model_num));
